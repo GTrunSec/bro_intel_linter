@@ -313,7 +313,7 @@ class bro_data_intel_field_values:
         ret = (bro_intel_indicator_return.ERROR, 'Invalid confidence - %s - Needs to be 1-100' % (str(t)))
         try:
             t_int = int(t)
-            if isinstance(t_int, (int, long)) and (t_int > 0 and t_int < 100):
+            if isinstance(t_int, (int)) and (t_int > 0 and t_int < 100):
                 ret = (bro_intel_indicator_return.OKAY, None)
         except ValueError:
             ret = (bro_intel_indicator_return.ERROR, 'Invalid confidence - %s - Needs to be 1-100' % (str(t)))
@@ -355,7 +355,7 @@ class bro_data_intel_field_values:
         ret = (bro_intel_indicator_return.ERROR, 'Invalid severity - %s (valid: 1-10)' % (t))
         try:
             t_int = int(t)
-            if isinstance(t_int, (int, long)) and (t_int > 0 and t_int < 10):
+            if isinstance(t_int, (int)) and (t_int > 0 and t_int < 10):
                 ret = (bro_intel_indicator_return.OKAY, None)
         except ValueError:
             ret = (bro_intel_indicator_return.ERROR, 'Invalid severity - %s  (valid: 1-10)' % (t))
